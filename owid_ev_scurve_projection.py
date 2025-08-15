@@ -56,10 +56,10 @@ for country in COUNTRIES:
     k0 = 0.4
     t0_0 = np.median(x)
 
-    try:
+    try: #assume the samples in y are means of a Bernoulli distribution, meaning they are sums of independent events (buying decisions) with given probability for that year. Then their standard deviation sigma is the square root of their means:
         popt, _ = curve_fit(
             logistic, x, y,
-            p0=[L0, k0, t0_0], #bounds=([0.5, 0.001, x.min()-5],[1.05, 5.0, x.max()+10])
+            p0=[L0, k0, t0_0], sigma=np.sqrt(y) #,bounds=([0.5, 0.001, x.min()-5],[1.05, 5.0, x.max()+10])
         )
     except RuntimeError:
         continue
