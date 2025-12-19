@@ -91,7 +91,7 @@ REGION_COLORS = {
     "US": "#f59e0b",      # amber
 }
 
-LABEL_ROTATION = 20
+LABEL_ROTATION = 0 #20
 STAGGER_STEP = 0.22   # vertical offset size for staggering labels
 STAGGER_CYCLE = 3     # cycle through -1,0,+1 offsets
 
